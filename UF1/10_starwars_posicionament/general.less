@@ -20,7 +20,9 @@
         border:10px solid white;
     }
     
-@radi: 65px;
+
+@radi_gran: 65px;
+@radi_petit:10px;
 @radi_icona:30px;   
     
     
@@ -28,9 +30,36 @@
 @taronja: #ef813d;
 @taronja_sel: #b25ed1;
 
- 
+    
+    input[type="radio"] {
+        display: none;
+    }
+
+    .rotacions(@graus, @fill)     {
+       transform:rotate(@graus);       
+        li {
+           transform:rotate(-@graus); 
+        }
+        li:nth-child(@{fill}){
+            background-color: blueviolet;
+        }
+    }
+    
+    #r_facebook:checked~ul{
+        .rotacions(90deg, 3);
+    }
+    #r_twitter:checked~ul{
+        .rotacions(-90deg, 2);
+    }  
+    #r_instagram:checked~ul{
+        .rotacions(180deg, 4);
+    }      
+    #r_linkedin:checked~ul{
+        .rotacions(0deg, 5);        
+    }  
     ul {
-        transition:transform 1s linear;
+    
+        transition:transform 2s linear;
         display: block;
         width: @radi_icona;
         height: @radi_icona;
@@ -38,27 +67,35 @@
         margin: 75px auto;
         position: relative;
         
-            &:after {
-                z-index: 1;
-                content: "";
-                display: block;
-                width: 0px;
-                //width: @radi_icona * 0.75;
-                border-left: 10px solid white;
-                border-right: 10px solid white;
-                border-bottom: @radi  solid @taronja_suau;
-                border-top: @radi  solid @taronja_suau;
-                height: 0px;
-                background-color: lime;
-                position: absolute;
-                bottom: 50%;
-                left: 5px;
+        &:after, &:before {    
+            z-index: 1;
+            content: "";
+            display: block;
+            width: 0px;
+            height: 0px;                
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        &:after {
+
+                border-left: @radi_petit solid white;
+                border-right: @radi_petit solid white;
+                border-bottom: @radi_gran  solid @taronja_suau;
+                border-top: @radi_gran  solid @taronja_suau;
 
             }       
-          
+            &:before {
+                border-left: @radi_gran solid @taronja_suau;
+                border-right: @radi_gran solid @taronja_suau;
+                border-bottom: @radi_petit  solid transparent;
+                border-top: @radi_petit  solid transparent;
+
+            }     
         
         li {
-            transition:transform 1s linear;
+            transition:transform 2s linear;
             z-index: 1000;
             background-color: @taronja;
             position: absolute;
@@ -72,19 +109,19 @@
         }
         li:nth-child(2) {
             top:0px;
-            left:@radi;
+            left:@radi_gran;
         }
         li:nth-child(3) {
             top:0px;
-            right:@radi;
+            right:@radi_gran;
         }
         li:nth-child(4) {
-            top:@radi;
+            top:@radi_gran;
             left:0;
 
         }  
         li:nth-child(5) {
-            bottom:@radi;
+            bottom:@radi_gran;
             left:0;
         }   
     }
