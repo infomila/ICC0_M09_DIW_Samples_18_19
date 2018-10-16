@@ -1,0 +1,55 @@
+.capsa {
+    display: block;
+    width:100px;
+    //height:100px;
+    background-color: lime;
+    //-----------------------
+    // posicionament
+    //-----------------------
+    position: fixed;
+    //top:~"calc(50% - 50px)";
+    //left:~"calc(50% - 50px)";
+    top:50%;
+    left:50%;
+    //margin:-50px;
+    transform: translate(-50%, -50%);
+    //-----------------------
+}
+
+//-------------------------------
+#links  {
+    font-size:20px;
+    
+    //-----------------------
+    // posicionament
+    //-----------------------
+    position: fixed;
+    bottom:0px;
+    right:10%;
+    //-----------------------
+    background-color:#d87777;
+    border: 1px solid black;
+    font-family: Calibri, Arial, sans-serif;
+    width: 6em;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    &:hover {
+            background-color:#a55252;
+        ul {
+            //display: block;
+            height: 4em;
+            transition: height 1s;
+        }
+    }
+    
+    ul {
+        //display: none;
+        height: 0em;
+       overflow: hidden;
+        transition: height 1s;
+    }
+        
+}

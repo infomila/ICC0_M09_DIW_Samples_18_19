@@ -1,0 +1,50 @@
+nav {
+
+    .fa-accusoft{
+        font-size: 3em;
+    }
+    
+    li{
+        display: block;
+        border:1px solid black;
+        background-color: coral;
+        padding:10px;   
+        float:left;
+        position: relative;
+        ul {
+            display: none;  
+            //background-color: coral;
+            position:absolute;
+            top: 100%;
+            left: 0%;            
+        }
+        li {
+            width: 5em;
+            //white-space: nowrap;
+            
+            ul {
+                top: 0%;    
+                left: ~"calc(100% + 30px)";
+                
+                &:after{
+                    content:">";
+                    text-align: center;
+                    display: block;
+                    line-height: 30px;
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    border: 1px solid black;
+                    border-radius: 50%;
+                    top: 0px;left: -30px;
+                    
+                }
+            }
+        }
+        &:hover>ul{
+            display: block;
+        }
+    }
+    
+    
+}

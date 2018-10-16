@@ -1,0 +1,130 @@
+#barra_lateral {
+    border:1px solid #444;
+    width: 20%;
+    .backimg {
+        background-image: url(images/stars.jpg);
+        height: 150px;
+        background-position: center center;
+    }
+    .pilot {
+        border-radius:50%;
+        overflow: hidden;
+        width: 150px;
+        height: 150px;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+        margin: 0px auto;
+        margin-top: -76px;
+        border:10px solid white;
+    }
+    
+@radi: 65px;
+@radi_icona:30px;   
+    
+    #c_f:checked~ul {
+        transform:rotate(90deg);
+        li {
+            transform:rotate(-90deg);
+        }
+        li:nth-child(3)     {
+            background-color: @taronja_sel;
+            
+        }
+    }
+    #c_t:checked~ul {
+        transform:rotate(-90deg);
+        li{
+            transform:rotate(90deg);
+        }
+        li:nth-child(2)     {
+            background-color: @taronja_sel;
+
+        }
+    }
+    #c_l:checked~ul {
+        transform:rotate(0deg);
+        li{
+            transform:rotate(0deg);
+        }
+        li:nth-child(5)     {
+            background-color: @taronja_sel;
+
+        }
+    }  
+    #c_i:checked~ul {
+        transform:rotate(180deg);
+        li{
+            transform:rotate(-180deg);
+        }
+        li:nth-child(4)     {
+            background-color: @taronja_sel;
+
+        }
+    }    
+    @taronja_suau: #e2be7b;
+    @taronja: #ef813d;
+    @taronja_sel: #b25ed1;
+    
+ 
+    ul {
+        transition:transform 1s linear;
+        display: block;
+        width: @radi_icona;
+        height: @radi_icona;
+        //background-color: red;
+        margin: 75px auto;
+        position: relative;
+        
+            &:after {
+                z-index: 1;
+                content: "";
+                display: block;
+                width: 0px;
+                //width: @radi_icona * 0.75;
+                border-left: 10px solid white;
+                border-right: 10px solid white;
+                border-bottom: @radi  solid @taronja_suau;
+                border-top: @radi  solid @taronja_suau;
+                height: 0px;
+                background-color: lime;
+                position: absolute;
+                bottom: 50%;
+                left: 5px;
+
+            }       
+          
+        
+        li {
+            transition:transform 1s linear;
+            z-index: 1000;
+            background-color: @taronja;
+            position: absolute;
+            //border: 1px solid black;
+            border-radius: 50%;
+            width: @radi_icona;
+            height: @radi_icona;
+            text-align: center;
+            line-height: @radi_icona;    
+            
+        }
+        li:nth-child(2) {
+            top:0px;
+            left:@radi;
+        }
+        li:nth-child(3) {
+            top:0px;
+            right:@radi;
+        }
+        li:nth-child(4) {
+            top:@radi;
+            left:0;
+
+        }  
+        li:nth-child(5) {
+            bottom:@radi;
+            left:0;
+        }   
+    }
+}

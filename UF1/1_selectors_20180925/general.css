@@ -1,0 +1,118 @@
+header,
+footer {
+    background-color: lime;
+}
+
+html {
+    font-family: Arial, Helvetica, Calibri, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    background-color: #f9d8fd;
+}
+
+input {
+    display:block;
+    margin:10px;
+}
+
+input[type=text] {
+    padding:20px;
+    font-size:1.4em;
+}
+li {
+    display:block;
+}
+ul {
+    margin:0px;
+    padding:0px;
+}
+
+a:visited {
+    color:red;
+}
+
+
+
+a:after {
+    content:"(" attr(href) ")";
+    font-size:0.5em;
+    margin:2px;
+}
+a[href^=http], a[href^=ftp] {   
+    background-size:0px;
+    padding-left:0px;
+    background-repeat:no-repeat;  
+    transition: padding-left 0.75s, background-size 0.75s;
+     background-position:0% 50%;
+     
+}
+a[href^=ftp] {   
+    background-image:url(images/ftp.png);
+}
+a[href^=http] {   
+    background-image:url(images/www.png);
+}
+
+a:hover {
+    background-size:18px;
+    background-color:lime;
+    padding-left:25px;
+}
+
+input[type=text]:focus {
+    border : 3px solid red;
+}
+
+#links li:before {
+    content:"☕";
+    font-size: 10px;
+    padding: 5px;
+}
+
+a:before {
+    content:"";
+    display:block;
+    width:10px;
+    height:10px;
+    background-color:#FF7755;
+    position:absolute;
+    top:0px;
+    left:100%;
+    border-radius:50%;
+}
+a {
+    position:relative;
+}
+
+li:nth-child(3n) {
+    background-color: #FF8899;
+}    
+li:nth-child(3n-1) {
+    background-color: #5555FF;
+}    
+li:nth-child(3n-2) {
+    background-color: #55FFFF;
+}    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+     

@@ -1,0 +1,63 @@
+
+
+body {    
+    
+    #contents {
+        min-height: ~"calc(100vh - 200px)";
+        box-sizing: border-box;
+    }
+    
+    font-size:16px;
+    font-family: arial, sans-serif;
+    min-width: 950px;
+    .row {
+        overflow:auto;
+        background-color: cornflowerblue;
+    }
+    
+    header, footer {
+        background-color: lime;
+        height:100px;
+        margin: 0px;padding: 0px;
+    }
+    
+    
+    aside {
+        background-color: greenyellow;
+        float:left;
+        width:25%;
+    }
+    main {
+        
+        min-width: 690px;
+        background-color: purple;
+        float:left;
+        width:75%;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+    article {
+        background-color: white;
+        float:left;
+        width: 33.33%;
+        outline:1px solid red;
+        
+        .articlebox {
+            background-color: #0ed4d4;
+            width: 160px;
+            margin: 15px auto;
+            padding: 15px;
+
+        }
+        img {
+            width: 100%;
+        }
+        h1 {
+            padding: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            text-transform: uppercase;
+        }
+    }
+}
