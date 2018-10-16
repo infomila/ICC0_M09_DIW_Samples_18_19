@@ -21,42 +21,6 @@
   width: 150px;
   height: 150px;
 }
-#barra_lateral #c_f:checked ~ ul {
-  transform: rotate(90deg);
-}
-#barra_lateral #c_f:checked ~ ul li {
-  transform: rotate(-90deg);
-}
-#barra_lateral #c_f:checked ~ ul li:nth-child(3) {
-  background-color: #b25ed1;
-}
-#barra_lateral #c_t:checked ~ ul {
-  transform: rotate(-90deg);
-}
-#barra_lateral #c_t:checked ~ ul li {
-  transform: rotate(90deg);
-}
-#barra_lateral #c_t:checked ~ ul li:nth-child(2) {
-  background-color: #b25ed1;
-}
-#barra_lateral #c_l:checked ~ ul {
-  transform: rotate(0deg);
-}
-#barra_lateral #c_l:checked ~ ul li {
-  transform: rotate(0deg);
-}
-#barra_lateral #c_l:checked ~ ul li:nth-child(5) {
-  background-color: #b25ed1;
-}
-#barra_lateral #c_i:checked ~ ul {
-  transform: rotate(180deg);
-}
-#barra_lateral #c_i:checked ~ ul li {
-  transform: rotate(-180deg);
-}
-#barra_lateral #c_i:checked ~ ul li:nth-child(4) {
-  background-color: #b25ed1;
-}
 #barra_lateral ul {
   transition: transform 1s linear;
   display: block;
