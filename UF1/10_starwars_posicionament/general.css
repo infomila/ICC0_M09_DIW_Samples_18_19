@@ -22,7 +22,7 @@
   height: 150px;
 }
 #barra_lateral input[type="radio"] {
-  display: none;
+  /*display: none;*/
 }
 #barra_lateral #r_facebook:checked ~ ul {
   transform: rotate(90deg);
