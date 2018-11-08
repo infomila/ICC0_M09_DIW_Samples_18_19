@@ -1,0 +1,224 @@
+//---------------------------------
+//      Constants
+//---------------------------------
+@marge: 10px;
+
+
+//------------------------------
+//      Mixins
+//-------------------------------
+.calcul_amplada_article(@p_num_columnes, @p_marge) {
+    
+@w:100% / @p_num_columnes;
+    
+        margin: @p_marge;
+        width: ~"calc( @{w} - ( 2 * @{p_marge} ) ) ";
+        box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer {
+    padding: 10px;
+    background-color: #43777e;
+}
+
+main {
+    flex-grow: 1;
+}
+//---------------------------------
+h2 {
+    font-size: 1.7rem;
+    font-weight: bolder;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+h3 {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+header {
+    ul {
+        display: flex;
+        justify-content: center;
+
+
+        li {
+            display: block;
+            padding: 10px;
+        }
+    }
+}
+
+#maincontainer {
+    display: flex;
+
+    //----------------------------------
+    #category_navigation {
+        width: 10%;
+    }
+
+    #articles {
+        width: 70%;
+    }
+
+    #news {
+        width: 20%;
+    }
+
+    //----------------------------------    
+
+    #category_navigation {
+        ul {
+            padding-left: 15px;
+        }
+
+        li ul {
+            display: none;
+        }
+
+        li.open ul {
+            display: block;
+        }
+
+    }
+
+              
+                 
+                    
+    
+    #articles {
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0px;
+            article {
+                // cridem el mixin per calcular l'amplada a partir del número de columnes
+                .calcul_amplada_article(3, @marge);                
+                
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                border: 1px solid #444;
+                background-color: #ddd;            
+
+                h3 {
+                    padding: 10px;
+                }
+
+                main {
+                    flex-grow: 1;
+                    padding: 10px;
+                    font-size: 0.8rem;
+                    text-align: justify;
+                    hyphens: auto;
+                }
+
+                figure {
+                    float: left;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                }
+
+                footer {
+                    padding: 15px;
+                    display: block;
+                    background-color: #444;
+                    color: #fff;
+
+                }
+            }
+
+        }
+    }
+
+    #news {
+        article {
+            border: 1px solid #444;
+            background-color: azure;
+            padding: 5px;
+            margin: @marge;
+        }
+
+        figure {
+            float: left;
+            margin: 10px;
+        }
+
+    }
+}
+
+@num_columnes: 2;
+@amplada_columna: (100% / @num_columnes);
+
+//--------------------------------------
+@media (min-width:731px) and (max-width: 1150px) {
+    #maincontainer {
+        #category_navigation {
+            display: none;
+        }
+
+        #articles {
+            width: 60%;
+
+            div {
+
+                article {
+                    .calcul_amplada_article(2, @marge);
+                }
+            }
+
+            img {
+                width: 150px;
+            }
+        }
+
+        #news {
+            width: 40%;
+        }
+    }
+}
+//--------------------------------------
+@media (max-width: 730px) {
+    #maincontainer {
+        flex-wrap: wrap;
+        #category_navigation {
+            display: none;
+        }
+
+        #articles {
+            order: 2;
+            width: 100%;
+            div {
+
+                article {
+                    .calcul_amplada_article(1, @marge);
+                }
+            }
+
+            img {
+                width: 100px;
+            }
+        }
+
+        #news {
+            h2 {
+                display: none;
+            }
+            width: 100%;
+            order: 1;
+        }
+    }
+    
+}
