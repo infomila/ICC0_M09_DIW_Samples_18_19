@@ -26,10 +26,11 @@
     </header>
     <!--main id="maincontainer"-->
     <nav id="category_navigation">
+        <div id="nav_handler" onclick="this.parentElement.classList.toggle('nav_opened'); "></div>
         <ul>
             <p>Computers and tablets</p>
-            <li class="open">
-                <p>Laptop</p>
+            <li onclick="this.classList.toggle('open');">
+                <p> Laptop </p>
                 <ul>
                     <li>HP</li>
                     <li>Dell</li>
@@ -38,7 +39,7 @@
                     <li>MSI</li>
                 </ul>
             </li>
-            <li>
+            <li onclick="this.classList.toggle('open');">
                 <p>Desktop</p>
                 <ul>
                     <li>HP</li>
@@ -48,7 +49,7 @@
                     <li>MSI</li>
                 </ul>
             </li>
-            <li>
+            <li onclick="this.classList.toggle('open');">
                 <p>Tablet</p>
                 <ul>
                     <li>Android</li>
@@ -127,6 +128,7 @@
     </aside>
     <!--/main-->
     <footer>My Shop.com</footer>
+ 
 </body>
 
 </html>

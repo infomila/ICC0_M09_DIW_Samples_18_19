@@ -2,8 +2,6 @@
 //      Constants
 //---------------------------------
 @marge: 10px;
-
-
 //------------------------------
 //      Mixins
 //-------------------------------
@@ -18,15 +16,36 @@
 
 
 body {
-    min-height: 100vh;
-    display: flex;
+    
+    
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: auto 1fr auto;    
+    grid-template-areas: 
+        "header header header"
+        "nav articles news"
+        "footer footer footer";    
+    min-height: 100vh; 
     flex-direction: column;
     justify-content: space-between;
 }
 
+header {
+    grid-area:header;
+}
 footer {
     padding: 10px;
     background-color: #43777e;
+    grid-area: footer;
+}
+nav {
+    grid-area:nav;
+}
+ 
+#news {
+    grid-area:news;
+}
+#articles {
+    grid-area: articles;
 }
 
 main {
