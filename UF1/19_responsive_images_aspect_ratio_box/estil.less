@@ -1,0 +1,36 @@
+
+html {
+    --el_meu_color: #ff0000;
+    height:100%;
+    
+    
+    .capsa {
+        color:var(--el_meu_color);
+    }
+}
+.wrapper {
+    width:50vw;
+}
+
+
+.aspect_ratio {
+
+    
+    padding:0px;
+    
+    padding-top: ~"calc( var(--aspectratio) * 100%)";
+    //padding-top: ~"calc( 3 / 4 * 100%)";
+    height: 0px; // IMPORTANT 
+    margin: 0px;
+    background-color: red;
+    background-position: center;
+    border-width:0px;
+    overflow: hidden;
+
+    background-size: cover;
+    img {
+          visibility: hidden;
+    }
+}
+/*
+*/
