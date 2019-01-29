@@ -1,0 +1,38 @@
+<!DOCTYPE html >
+
+<html>
+
+<head>
+    <title>title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="estil.css" />
+</head>
+
+<body onmousemove="mouse_down(event)">
+    <div id="perspective_container">
+        <div id="cube">
+            <div class="f-front">Front</div>
+            <div class="f-back">Back</div>
+            <div class="f-right">Right</div>
+            <div class="f-left">Left</div>
+            <div class="f-top">Top</div>
+            <div class="f-bottom">Bottom</div>
+        </div>
+    </div>
+</body>
+<script>
+    function mouse_down(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var m = window.innerWidth / 2;
+        var h = window.innerHeight / 2;
+        var angleY = 2 * 90 * (x - m) / m;
+        var angleX = 2 * 90 * (y - h) / h;
+        cube.style = "transform: rotateY(" + (angleY) + "deg) rotateX(" + (-angleX) + "deg);";
+
+    }
+
+</script>
+
+</html>

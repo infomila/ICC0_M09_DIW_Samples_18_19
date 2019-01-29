@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="rellotge.css">
+</head>
+
+<body onload="setInterval(tick, 1000)">
+    <div id="clock">
+        <i id="minuts" style="--minuts:35;"></i>        
+        <em id="segons" style="--segons:35;"></em>        
+        <b id="hora" style="--hora:3;"></b>        
+        <div>
+            <e><div>1</div></e>
+            <e><div>2</div></e>
+            <e><div>3</div></e>
+            <e><div>4</div></e>
+            <e><div>5</div></e>
+            <e><div>6</div></e>
+            <e><div>7</div></e>
+            <e><div>8</div></e>
+            <e><div>9</div></e>
+            <e><div>10</div></e>
+            <e><div>11</div></e>
+            <e><div>12</div></e>
+        </div>
+    </div>
+
+    
+</body>
+
+<script>
+        
+        function tick(){
+            var d = new Date();
+            segons.setAttribute("style", "--segons:"+d.getSeconds());
+            minuts.setAttribute("style", "--minuts:"+d.getMinutes());   
+            hora.setAttribute("style", "--hora:"+d.getHours());    
+        }
+        
+    
+</script>
+</html>

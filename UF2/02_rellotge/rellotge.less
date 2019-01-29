@@ -1,0 +1,108 @@
+@minuts:45;
+@minuts_angle:@minuts*360deg/60;
+
+@hora:18;
+@hores_angle:@hora*360deg/12;
+
+@radi:150px;
+
+
+#clock {
+    width: 2*@radi;
+    height: 2*@radi;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: relative;
+
+    i,em,
+    b {
+        width: 4px;
+        height: 45%;
+        background-color: black;
+        display: block;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform-origin: center bottom;
+    }
+    i {
+        transform: rotate( ~"calc(var(--minuts) * 6deg)");
+    }
+    em {
+        width: 2px;
+        background-color: red;        
+        transform: rotate( ~"calc(var(--segons) * 6deg)");
+    }
+    b {
+        transform: rotate(~"calc(var(--hora) * 30deg)");
+        height: 30%;
+    }
+    
+@ampladaTick:2%;
+@alcadaTick:5%;    
+    
+    e{
+        display: block;
+        width: @ampladaTick;
+        height: @alcadaTick;
+        background-color: black;
+        position: absolute;
+        top: 50% - @alcadaTick * 0.5;
+        left: 50% - @ampladaTick * 0.5;
+        background-color: red;
+        transform: rotate(270deg) translateY(-@radi+10px);
+    }
+
+    e:nth-child(1){
+        .rotacio(1)
+    }
+    e:nth-child(2){
+        .rotacio(2)
+    }
+    e:nth-child(3){
+        .rotacio(3)
+    }    
+    e:nth-child(4){
+        .rotacio(4)
+    }
+    e:nth-child(5){
+        .rotacio(5)
+    }
+    e:nth-child(6){
+        .rotacio(6)
+    }
+    e:nth-child(7){
+        .rotacio(7)
+    }
+    e:nth-child(8){
+        .rotacio(8)
+    }
+    e:nth-child(9){
+        .rotacio(9)
+    }
+    e:nth-child(10){
+        .rotacio(10)
+    }
+    e:nth-child(11){
+        .rotacio(11)
+    }
+    e:nth-child(12){
+        .rotacio(12)
+    }
+    e div{
+        font-weight: bolder;
+        font-size: 29px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+    }
+    
+}
+
+.rotacio(@hora) {
+    transform: rotate(@hora * 30deg)  translateY(-@radi+10px);
+    div {
+        transform: translateX(-50%) rotate(-@hora * 30deg) ;
+        }            
+}
+

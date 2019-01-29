@@ -1,0 +1,47 @@
+<!DOCTYPE html >
+
+<html onmousemove="mousssse(event)" onmousedown="mouseclicat(true)" onmouseup="mouseclicat(false)">
+	<head>
+	    <title>title</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+		<link rel="stylesheet" type="text/css" href="estil.css" />
+	</head>
+
+	<body>
+		<main>
+			<div id="base">
+                <b id="s1">
+                    <b id="s2">
+                        <div id="pinsa">
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </b>
+                </b>
+            </div>
+		</main>		
+	</body>
+    
+    <script>
+    
+        function mousssse(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            var m = window.innerWidth/2;
+            var h = window.innerHeight/2;
+            var angle1 = 90 * (x - m) /m;
+            var angle2 = 90 * (y - h) /h;
+            s1.style="transform:translateX(-50%) rotate("+(angle1)+"deg);";
+            s2.style="transform:rotate("+(angle2)+"deg);";
+        }
+        
+        function mouseclicat(isUp){
+            var dist = isUp? "50%": "10%";
+            
+            document.querySelectorAll("i")[0].style=  "left:"+dist;
+            document.querySelectorAll("i")[1].style="right:"+dist;
+        }
+    </script>
+    
+</html>

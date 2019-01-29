@@ -1,0 +1,58 @@
+
+@mida:100px;
+
+#perspective_container {
+    
+    perspective: 600px;
+    width: 100vw;
+    height: 100vh;
+    
+    #cube {
+        
+        width: @mida;
+        height: @mida;
+        position:relative;
+        transform-style: preserve-3d;
+        transform: rotateY(0deg) rotateX(0deg);
+        
+        div {
+            width: @mida;
+            height: @mida;
+            position:absolute;
+            top: 0px;
+            left: 0xp;
+            text-align: center;
+            line-height: @mida;
+            //backface-visibility: hidden;
+            opacity: 0.9;
+            &.f-front {
+                background-color: red;
+                transform: translateZ(@mida * 0.5);
+            }
+            &.f-back {
+                background-color: indianred;
+                transform: translateZ(-@mida * 0.5) rotateY(180deg);
+            }
+            &.f-right {
+                background-color: darkred;
+                transform: translateX(@mida * 0.5) rotateY(90deg);
+            }
+            &.f-left {
+                background-color: orangered;
+                transform: translateX(-@mida * 0.5) rotateY(-90deg);
+            }
+            &.f-top {
+                background-color: darkgoldenrod;
+                transform: translateY(@mida * 0.5) rotateX(90deg);
+            }
+            &.f-bottom {
+                background-color: mediumvioletred;
+                transform: translateY(-@mida * 0.5) rotateX(-90deg);
+            }
+            
+        }
+        
+    }
+    
+    
+}

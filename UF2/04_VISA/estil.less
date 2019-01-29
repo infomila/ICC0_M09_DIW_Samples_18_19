@@ -1,0 +1,45 @@
+@mida: 100px;
+
+#card {
+    position:fixed;
+    top:50%;
+    left: 50%;
+    perspective: 600px;
+    perspective-origin: center center;
+    width: @mida;
+    height: @mida;
+    
+    div {
+        width: @mida;
+        height: @mida;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        text-align: center;
+        font-weight: bolder;
+        line-height: @mida;
+        font-size: 20px;
+    }
+    
+    .face1 {
+        background-color: aqua;
+        transform: rotateY(0deg);
+    }
+    .face2 {
+        background-color: red;
+        transform: rotateY(180deg);
+    }
+    .card-inner {
+        transition:transform 1s;
+        transform-style: preserve-3d;
+    }
+    &:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+}
+
+#ck:checked ~ #card .card-inner {
+    transform: rotateY(180deg);
+}
