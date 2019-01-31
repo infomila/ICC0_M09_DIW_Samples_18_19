@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+
+<html>
+
+<head>
+    <title>title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="estil.css" />
+</head>
+
+<body onmousemove="mouse_down(event)">
+    <div id="perspective_container">
+        
+        
+        <input id="i1" type="radio" checked name="x">
+        <input id="i2" type="radio" name="x">
+        <input id="i3" type="radio"  name="x">
+        <input id="i4" type="radio"  name="x">
+        <input id="i5" type="radio"  name="x">
+        <input id="i6" type="radio"  name="x">
+
+        
+        
+        <div id="carrousel">
+            <label for="i1" ><img src="https://picsum.photos/300/200?1"></label>            
+            <label for="i2" ><img src="https://picsum.photos/300/200?2"></label>
+            <label for="i3" ><img src="https://picsum.photos/300/200?3"></label>
+            <label for="i4" ><img src="https://picsum.photos/300/200?4"></label>
+            <label for="i5" ><img src="https://picsum.photos/300/200?5"></label>
+            <label for="i6" ><img src="https://picsum.photos/300/200?6"></label>
+        </div>
+        
+        <div class="handlers">
+            <label for="i1" ></label>  
+            <label for="i2" ></label>  
+            <label for="i3" ></label>  
+            <label for="i4" ></label>  
+            <label for="i5" ></label>  
+            <label for="i6" ></label>  
+        </div>
+        
+    </div>
+</body>
+<script>
+    function mouse_down(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var m = window.innerWidth / 2;
+        var h = window.innerHeight / 2;
+        var angleY = 2 * 90 * (x - m) / m;
+        var angleX = 2 * 90 * (y - h) / h;
+        cube.style = "transform: rotateY(" + (angleY) + "deg) rotateX(" + (-angleX) + "deg);";
+
+    }
+
+</script>
+
+</html>
