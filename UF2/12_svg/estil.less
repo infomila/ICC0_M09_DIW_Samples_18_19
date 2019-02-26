@@ -4,10 +4,25 @@
     width:200px;
     height: 200px;
 
-    #shuriken2 {
+    #shuriken2, #shuriken1 {
+        animation-duration: 3s;
+        animation-name:anim-rotacio;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
         path {
             fill:#00ff62;
         }
     }
+    #shuriken1 {
+        transform-origin: 100*58.3% / 210 100*20.3% / 297;
+        animation-direction: reverse;
+    }
+    #shuriken2  {
+        transform-origin: 11% 9.3%;
+    }
+}
 
+@keyframes anim-rotacio {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
