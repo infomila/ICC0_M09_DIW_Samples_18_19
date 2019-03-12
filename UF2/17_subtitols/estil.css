@@ -1,0 +1,17 @@
+::cue {
+    color:black;
+}
+
+/* Les següents regles no es suporten per Firefox, només per Chrome  */
+::cue(v[voice='MrUgly']) {
+    color:red;
+    background:blue;
+}
+::cue(v[voice='Public']) {
+    color:black;
+    background:white;
+}    
+
+::cue(.BIG){
+   font-size:4em;
+}
